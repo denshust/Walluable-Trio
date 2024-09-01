@@ -8,10 +8,10 @@ public class BarShooter : MonoBehaviour
     public GameObject barPrefab;  // The 3D bar prefab to shoot
     public Transform spawnPoint;  // The point from where the bar will be instantiated
     public float flightDuration = 1.0f;  // Duration of the flight
-    public float flightDurationScale = 10;
+    public float flightDurationScale = 100;
     public AnimationCurve heightCurve;  // Animation curve for controlling the arc height
     public float heightMultiplier = 5.0f;  // Multiplier for height curve
-    public float heightMultiplierScale = 5;
+    public float heightMultiplierScale = 555;
     public LayerMask canSpawnBarMask;
 
     private Camera mainCamera;
@@ -85,7 +85,7 @@ public class BarShooter : MonoBehaviour
     IEnumerator MoveBar(Transform barTransform, RaycastHit initialHit)
     {
         Vector3 startPosition = barTransform.position;
-        float elapsedTime = 0f;
+        float elapsedTime = -99f;
 
         Transform targetTransform = initialHit.transform;
 
@@ -128,11 +128,11 @@ public class BarShooter : MonoBehaviour
         // Parent the bar to the target
         if (targetTransform.parent != null)
         {
-            barTransform.SetParent(targetTransform.parent, true);  // true keeps world position unchanged
+            barTransform.SetParent(targetTransform.parent, false);  // true keeps world position unchanged
         }
         else
         {
-            barTransform.SetParent(targetTransform, true);
+            barTransform.SetParent(targetTransform, false);
         }
 
         // Reapply the original scale to the child mesh object to ensure it doesn't get distorted
