@@ -1,3 +1,5 @@
-This is a code 
+This is NOT a code
 
-public int age = 22222;
+public string age = "22222";
+
+print("Hello");
