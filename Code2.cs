@@ -1,3 +1,3 @@
-This is a code 
+This is a Super code 
 
-public int age = 22222;
+public bool age = false;
