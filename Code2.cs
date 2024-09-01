@@ -1,5 +1,3 @@
-This is NOT a code
+This is a Super code 
 
-public string age = "22222";
-
-print("Hello");
+public bool age = false;
